@@ -6,7 +6,7 @@ end
 directory node[:openldap][:ssl_dir] do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '0755'
   action :create
 end
 
@@ -16,6 +16,6 @@ node[:certs].each do |c|
     action :create_if_missing
     owner 'root'
     group 'root'
-    mode 0644
+    mode '0644'
   end
 end

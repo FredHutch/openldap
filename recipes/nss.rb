@@ -20,6 +20,10 @@
 
 include_recipe 'openldap::client'
 
+package node['openldap']['packages']['nss'] do
+  action node['openldap']['package_install_action']
+end
+
 template '/etc/ldap.conf' do
   source 'ldap.conf.erb'
   mode '0644'

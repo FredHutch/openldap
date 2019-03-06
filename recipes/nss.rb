@@ -22,6 +22,7 @@ include_recipe 'openldap::client'
 
 package node['openldap']['packages']['nss'] do
   action node['openldap']['package_install_action']
+  options node['openldap']['package_install_options']
 end
 
 template '/etc/ldap.conf' do
